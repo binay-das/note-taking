@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.notes{
+    width: 100%;
+    min-height: 100vh;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,0.9921218487394958) 0%, rgba(21,128,121,1) 1%, rgba(122,159,32,1) 100%);
+    color: white;
+    padding: 4% 0 0 10%;
+}
+.notes h1 img {
+    width: 50px;
+    color: wheat;
+}
+.notes h1 {
+    font-size: 40px;
+    display: inline-flex;
+    justify-content: space-between;
+    color: rgb(206, 206, 158);
+    margin-bottom: 30px;
+}
+
+.notes button {
+    font-size: 16px;
+    outline: 0;
+    border: 0;
+    border-radius: 20px;
+    padding: 15px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgb(134, 177, 118);
+}
+.notes button img{
+    width: 25px;
+    margin-right: 10px;
+}
+
+.notes button:hover{
+    cursor: pointer;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    min-height: 150px;
+    /* border: 2px solid red; */
+    background-color: wheat;
+    color: black;
+    outline: none;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.note img{
+    width: 30px;
+}
