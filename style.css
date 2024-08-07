@@ -1,63 +1,63 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-.notes{
-    width: 100%;
+body {
     min-height: 100vh;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,0.9921218487394958) 0%, rgba(21,128,121,1) 1%, rgba(122,159,32,1) 100%);
-    color: white;
-    padding: 4% 0 0 10%;
+    background-color: rgb(178, 245, 222);
+    overflow-x: hidden;
 }
-.notes h1 img {
-    width: 50px;
-    color: wheat;
-}
-.notes h1 {
-    font-size: 40px;
-    display: inline-flex;
-    justify-content: space-between;
-    color: rgb(206, 206, 158);
-    margin-bottom: 30px;
-}
-
-.notes button {
-    font-size: 16px;
-    outline: 0;
-    border: 0;
-    border-radius: 20px;
-    padding: 15px 25px;
-
+h1 {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
-    background-color: rgb(134, 177, 118);
+    justify-content: left;
+    margin: 30px 0 20px 40px;
 }
-.notes button img{
-    width: 25px;
+h1 img {
+    width: 60px;
+}
+button{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    margin: 20px 0 0 50px;
+    width: 150px;
+    padding: 5px 5px;
+    background-color: rgb(129, 198, 198);
+    cursor: pointer;
+}
+button img {
+    width: 40px;
     margin-right: 10px;
 }
 
-.notes button:hover{
-    cursor: pointer;
+.notes {
+    padding: 10px 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    row-gap: 20px;
+    column-gap: 30px ;
+
+    justify-content: space-around;
 }
 
-.input-box {
+.note {
+    display: flex;
+    background-color: azure;
+    border-radius: 10px;
     position: relative;
-    width: 100%;
-    max-width: 500px;
-    min-height: 150px;
-    /* border: 2px solid red; */
-    background-color: wheat;
-    color: black;
-    outline: none;
-    border-radius: 5px;
-    margin: 20px 0;
-}
 
-.note img{
-    width: 30px;
+}
+.note textarea {
+    height: 200px;
+    font-size: 20px;
+    width: 100%;
+    background-color: inherit;
+    border-radius: inherit;
+}
+.notes .note img {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
 }

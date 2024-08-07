@@ -1,34 +1,65 @@
-let notes = document.querySelector(".note");
-let add = document.querySelector(".btn");
-let note = document.querySelectorAll(".input-box");
-let IMG_SRC = "public/delete.png";
+let add = document.querySelector("button");
+let notes = document.querySelector(".notes");
 
-let update = () => {
-    let noteContent = notes.innerHTML;
-    localStorage.setItem("note", note.innerHTML);
+function update(){
+    const savedNotes = localStorage.getItem("content");
+    if(savedNotes){
+        const data = JSON.parse(savedNotes);
+        data.forEach(noteContent => {
+            let note = document.createElement("div");
+            note.classList.add("note");
+            note.innerHTML = `
+                <textarea name="" id="" placeholder="Write your note here">${noteContent}</textarea>
+                <img class="del" src="public/delete.png" alt="">
+            `;
+            notes.appendChild(note);
+
+            note.querySelector(".del").addEventListener("click", function(){
+                note.remove();
+                saveNotes();
+            });
+
+            note.querySelector("textarea").addEventListener("focusout", () => {
+                saveNotes();
+            });
+        });
+    }
+}
+const saveNotes = () => {
+    const content = document.querySelectorAll(".note textarea");
+    console.log(content);
+    const data = [];
+    content.forEach((note) => {
+        data.push(note.value);
+    });
+
+    if (data.length === 0) {
+        localStorage.removeItem("content");
+    } else {
+        localStorage.setItem("content", JSON.stringify(data));
+    }
+
+    
 }
 
-let show = () => {
-    note.innerHTML = localStorage.getItem("note") || '';
-};
+add.addEventListener("click", function(){
+    let note = document.createElement("div");
+    note.classList.add("note");
+    note.innerHTML = `
+        <textarea name="" id="" placeholder="Write your note here"></textarea>
+        <img class="del" src="public/delete.png" alt="">
+    `;
+    notes.appendChild(note);
 
-add.addEventListener("click", ()=>{
-    let inputBox = document.createElement("p");
-    let img = document.createElement("img");
-    inputBox.className = "input-box";
-    inputBox.setAttribute("contenteditable", "true");
-
-    img.src = IMG_SRC;
-    
-    notes.appendChild(inputBox).appendChild(img);
-});
-
-show();
-
-document.querySelectorAll(".input-box").forEach(note => {
-    note.addEventListener("keyup", update);
-    note.querySelector("img").addEventListener("click", function() {
+    note.querySelector(".del").addEventListener("click", function(){
         note.remove();
-        update();
+        saveNotes();
+    });
+
+    note.querySelector("textarea").addEventListener("focusout", () => {
+        saveNotes();
     });
 });
+
+update();
+
