@@ -1,16 +1,22 @@
 body {
     min-height: 100vh;
-    background-color: rgb(178, 245, 222);
     overflow-x: hidden;
+    background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 h1 {
     display: flex;
     align-items: center;
     justify-content: left;
-    margin: 30px 0 20px 40px;
+    margin: 30px 0 20px 80px;
+    letter-spacing: 1px;
+    word-spacing: 8px;
+    color: rgb(9, 70, 148);
+
 }
 h1 img {
     width: 60px;
+    margin-right: 15px;
 }
 button{
     display: flex;
@@ -24,10 +30,17 @@ button{
     padding: 5px 5px;
     background-color: rgb(129, 198, 198);
     cursor: pointer;
+    background-image: linear-gradient(135deg, #b6f9b8 0%, #a2e4d2 100%);
 }
 button img {
     width: 40px;
     margin-right: 10px;
+    /* transform: rotateX(90deg); */
+    transition: 0.3s;
+}
+button img:hover{
+    
+    transform: rotateX(90deg);
 }
 
 .notes {
@@ -53,6 +66,10 @@ button img {
     width: 100%;
     background-color: inherit;
     border-radius: inherit;
+    padding: 30px 30px 20px 20px;
+    border: none;
+    outline: none;
+    background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
 }
 .notes .note img {
     width: 40px;
@@ -60,4 +77,14 @@ button img {
     position: absolute;
     top: 5px;
     right: 5px;
+    cursor: pointer;
+}
+.notes .note img:hover {
+    transform: scale(1.05);
+    transition: 0.1s;
+}
+
+textarea:focus{
+    border: none;
+    outline: none;
 }

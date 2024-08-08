@@ -1,5 +1,6 @@
 let add = document.querySelector("button");
 let notes = document.querySelector(".notes");
+let editImg = document.querySelector("button img");
 
 function update(){
     const savedNotes = localStorage.getItem("content");
@@ -60,6 +61,9 @@ add.addEventListener("click", function(){
         saveNotes();
     });
 });
+add.addEventListener("mouseenter", function(){
+    editImg.style.transform = "rotateX(20deg)";
+})
 
 update();
 
